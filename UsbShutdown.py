@@ -34,7 +34,7 @@ if main_choice == '1': # if main menu option is 1
             else: # if cd unseccesful
                 print('Searching') # print message
                 time.sleep(3) # retry every 3 seconds
-        if email == 'n': # if user doesnt want email notifications
+        elif email == 'n': # if user doesnt want email notifications
             while True: # run in loop
                 if os.system("cd " +"F" +":") == '0': #cd into f directory
                     os.system('shutdown /p /f') # if cd successful shut down
@@ -58,14 +58,14 @@ if main_choice == '1': # if main menu option is 1
                 else: # if cd unsuccessful
                  print('Searching for unknown usb devices...') # if cd is unsuccesful print message and retry
                  time.sleep(3) #retry every 3 seconds
-        if email == 'n': # if user doesnt want email notification
+        elif email == 'n': # if user doesnt want email notification
             while True: #run in loop
                 if os.system("cd " +"usb_letter" +":") == 0: # cd's into user entered letter directory
                  os.system('shutdown /p /f') # if cd successful, shutdown
                 else: #if cd unsuccesful
                  print('Searching for unkown usb devices') #print message and retry
                 time.sleep(3) # retry every 3 seconds
-if main_choice == '2': # if main menu option is 2
+elif main_choice == '2': # if main menu option is 2
     usb_letter = input('Enter letter to monitor:') # ask for letter to monitor
     if usb_letter == '': # if input is empty assume letter F
         email = ("Do you want to turn on email notifications?Y/N: ") # ask for email notifications
@@ -85,7 +85,7 @@ if main_choice == '2': # if main menu option is 2
               msg = "UsbShutdown Critical Alert: unknown activity caused a shutdown to occur" #write message
               server.sendmail(add, add, msg) #send message to self
               os.system('shutdown /p /f') #shutdown
-        if email == 'n': #if user doesnt want email notifications
+        elif email == 'n': #if user doesnt want email notifications
             while True: # run in loop
                 if os.system("cd " +"F" +":") == 0: # cd into directory
                     print('everything looks good') # if cd succesful print mesage
@@ -111,7 +111,7 @@ if main_choice == '2': # if main menu option is 2
                     msg = "UsbShutdown Critical Alert: unknown activity caused a shutdown to occur" # write message
                     server.sendmail(add, add, msg) #send msg
                     os.system('shutdown /p /f') #shutdown
-        if email == 'n': # if user doesnt want email notifications
+        elif email == 'n': # if user doesnt want email notifications
             while True: # run in loop
                 if os.system("cd " +"usb_letter" +":") == 0: #cd into directory
                     print('everything looks good') # if cd successful print message
